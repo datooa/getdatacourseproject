@@ -5,8 +5,6 @@ library(dplyr)
 library(reshape2)
 library(plyr)
 
-setwd("~/Desktop/UCI HAR Dataset")
-
 features <- read.table("features.txt")
 features <- features$V2
 train <- read.table("train/X_train.txt")
@@ -14,7 +12,7 @@ test <- read.table("test/X_test.txt")
 data.combined <- rbind(train, test)
 names(data.combined) <- features
 
-# subject column -- creates train_subject and test_subject and then mergest them
+# subject column -- creates train_subject and test_subject and then merges them
 train_subject <- read.table("train/subject_train.txt")
 train_subject <- train_subject$V1
 test_subject <- read.table("test/subject_test.txt")
