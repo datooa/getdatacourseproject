@@ -31,3 +31,6 @@ fBodyGyroJerkMag
 From these signals, the mean and standard deviation were estimated and stored with the same variable names, followed by "-mean()-" and "-std()-", respectively.
 
 run_analysis.R works by reading in the train and test datasets (which contain all of the accelerometer and gyroscope measurements), inserting columns to identify the subjects and the activities they performed when each measurement was taken, attaching the names of the variables and then whittling down all but the mean and standard deviation measurements. Next, in order to determine summary (mean) calculations based on each subject and each activity performed, the measured variables are melted using the reshape2 library, and recast using the ddply function form the plyr package to create a long-form dataset with one value for each variable measured from each activity, for each subject. 
+
+# Units
+The features are normalized and bounded between [-1, 1]
